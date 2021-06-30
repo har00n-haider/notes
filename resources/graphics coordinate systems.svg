@@ -25,14 +25,14 @@
      showgrid="false"
      height="298mm"
      inkscape:zoom="0.74118967"
-     inkscape:cx="445.23016"
+     inkscape:cx="680.66248"
      inkscape:cy="490.42777"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     inkscape:window-x="1912"
+     inkscape:window-x="-8"
      inkscape:window-y="1192"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g104696" />
+     inkscape:current-layer="layer2" />
   <defs
      id="defs2">
     <rect
@@ -58,7 +58,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     style="display:none">
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
@@ -326,6 +327,11 @@
            y="145.4809"
            id="tspan50270-6">unreal</tspan></text>
     </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer2"
+       inkscape:label="Background"
+       style="display:inline" />
     <g
        id="g104696"
        transform="translate(0,85.615848)">
