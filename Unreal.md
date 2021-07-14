@@ -1,9 +1,13 @@
 # Contents
 
-- [Collision](#collision)
-- [Generated folders](#generated-folders)
-- [Build issues](#build-issues)
+- [Contents](#contents)
+    - [Collision](#collision)
+    - [Generated folders](#generated-folders)
+    - [Build issues](#build-issues)
 - [Loading assets](#loading-assets)
+- [Garbage collection](#garbage-collection)
+  - [Key points](#key-points)
+  - [Refs](#refs)
 - [Resources](#resources)
 
 
@@ -71,6 +75,20 @@ There seem to be a number of ways to load assets from the contents folder in C++
 2. Using the UKismetSystemLibrary::LoadAsset_Blocking (or asynchronous)
 3. Using ConstructorHelpers::FObjectFinder<T> after checking the Succeeded() flag
 4. Using LoadObject<T>()
+
+
+# Garbage collection
+
+## Key points
+
+- Only those classes that inherit from UObject will be considered for GC. All other classes need to do deal with their own memory management (e.g using smart pointers)
+- UObjects can be added to a rootset in orded to protect them from the GC.
+
+## Refs
+
+- https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/ProgrammingWithCPP/IntroductionToCPP/
+- https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Objects/Optimizations/#garbagecollection
+- https://www.ue4community.wiki/memory-management-6rlf3v4i
 
 
 
