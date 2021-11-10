@@ -11,7 +11,15 @@
 - [Resources](#resources)
 
 
+### Rendering
 
+Unreal abstracts away more of the shader stuff than Unity. 
+
+Unity:
+Exposes materials as using shaders with a set of configurations for the constants. So any changes to the inputs of a shader require a new material to be made. 
+
+Unreal:
+Instanced material is the new constants information for that instance + the shader.
 
 ### Collision
 
