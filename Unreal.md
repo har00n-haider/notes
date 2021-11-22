@@ -73,6 +73,12 @@ Could not be compiled. Try rebuilding from source manually:
 }
 ```
 
+# Unreal style C++
+
+## You can't Overload UFUNCTIONS
+
+https://answers.unrealengine.com/questions/45623/function-declaration-with-the-same-name-with-diffe.html
+
 
 # Loading assets
 
