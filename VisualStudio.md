@@ -2,7 +2,7 @@
 
 
 # Binary compatability
-v140 platform toolset onwarsd can be us, provided they are linkd with the latest platform toolset
+v140 platform toolset onwarsd can be used with binaries from a more recent toolset, provided they are linkd via the latest platform toolset.
 
 REF: https://docs.microsoft.com/en-us/cpp/porting/binary-compat-2015-2017?view=msvc-170
 
