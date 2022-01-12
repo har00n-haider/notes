@@ -14,4 +14,7 @@ REF: https://docs.microsoft.com/en-us/cpp/porting/binary-compat-2015-2017?view=m
 - VS2015 - VC14 - v140
 - VS2013 - VC12 - v120
 
-REF: https://dev.to/yumetodo/list-of-mscver-and-mscfullver-8nd
+REF:
+https://dev.to/yumetodo/list-of-mscver-and-mscfullver-8nd
+https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B
+
