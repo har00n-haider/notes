@@ -22,19 +22,24 @@ Generally the color conventions when denoting axes are:
 
 This is whether or not the base vectors (axis directions) of the coordinate system follow the [right handed rule](https://mathworld.wolfram.com/Right-HandRule.html), or not.
 
-```
-Open gl:#f03c15 
+So taking and open right hand and curling the fingers from x->y should yeild z being in the direction of the thumb. If so, then you have a right handed system, e.g:
 
-y #f03c15 
-↑         ↗ x #f03c15 
+```
+y  
+↑         ↗ x  
 |       . 
 |     . 
 |   . 
 | .
-+----------→ z #f03c15 
++----------→ z  
 ```
 
+Going from one to the other is simple for a given coordinate, but mathematical operations that have to be performed need to be consitent with the handedness of the coordinate system those points are in. 
 
+For example if you are rotating a vector using a rotation matrix, the same matrix cannot be used on vectors coming from different coordinates systems.
+
+
+### Coordinate systems of some common graphics programs
 
 #### Open gl
 ```
