@@ -22,6 +22,7 @@ Generally the color conventions when denoting axes are:
 
 This is whether or not the base vectors (axis directions) of the coordinate system follow the [right handed rule](https://mathworld.wolfram.com/Right-HandRule.html), or not.
 
+```
 Open gl:#f03c15 
 
 y #f03c15 
@@ -31,6 +32,7 @@ y #f03c15
 |   . 
 | .
 +----------→ z #f03c15 
+```
 
 
 ### Summary
