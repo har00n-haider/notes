@@ -10,6 +10,7 @@
 - [Garbage collection](#garbage-collection)
   - [Key points](#key-points)
   - [Refs](#refs)
+<<<<<<< HEAD
 - [Working in C++](#working-in-c)
   - [General tips](#general-tips)
   - [Using pointers](#using-pointers)
@@ -30,6 +31,16 @@ There a number of places where you could put game logic, but there are some guid
 3. 
 
 In simple cases the distinction between PlayerController/Pawn is not so deep so its fine to . Its still worth trying to keep behaviour seperate from the the manifestation logic.
+
+### Rendering
+
+Unreal abstracts away more of the shader stuff than Unity. 
+
+Unity:
+Exposes materials as using shaders with a set of configurations for the constants. So any changes to the inputs of a shader require a new material to be made. 
+
+Unreal:
+Instanced material is the new constants information for that instance + the shader.
 
 ### Collision
 
@@ -83,6 +94,12 @@ Could not be compiled. Try rebuilding from source manually:
 }
 ```
 
+# Unreal style C++
+
+## You can't Overload UFUNCTIONS
+
+https://answers.unrealengine.com/questions/45623/function-declaration-with-the-same-name-with-diffe.html
+
 
 # Loading assets
 
@@ -109,6 +126,7 @@ There seem to be a number of ways to load assets from the contents folder in C++
 - https://www.ue4community.wiki/memory-management-6rlf3v4i
 
 
+<<<<<<< HEAD
 # Working in C++
 
 ## General tips
@@ -139,6 +157,8 @@ https://conoscerelinux.org/wp-content/uploads/2019/11/Mischitelli-Slides-Nov2019
 
 In order for 
 
+=======
+>>>>>>> 5ff57ebea07a8800576a41abd4da12785309263b
 
 # Resources
 
