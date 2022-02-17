@@ -1,13 +1,35 @@
 # Contents
 
-- [Collision](#collision)
-- [Generated folders](#generated-folders)
-- [Build issues](#build-issues)
+- [Contents](#contents)
+- [General](#general)
+    - [Where to put logic?](#where-to-put-logic)
+    - [Collision](#collision)
+    - [Generated folders](#generated-folders)
+    - [Build issues](#build-issues)
 - [Loading assets](#loading-assets)
+- [Garbage collection](#garbage-collection)
+  - [Key points](#key-points)
+  - [Refs](#refs)
+- [Working in C++](#working-in-c)
+  - [General tips](#general-tips)
+  - [Using pointers](#using-pointers)
+  - [Exposing C++ to blueprints](#exposing-c-to-blueprints)
+    - [General tips](#general-tips-1)
+  - [Working asynch in UE4](#working-asynch-in-ue4)
+    - [Does everything that is blueprints visible have to be a UCLASS()](#does-everything-that-is-blueprints-visible-have-to-be-a-uclass)
 - [Resources](#resources)
 
+# General
 
+### Where to put logic?
 
+There a number of places where you could put game logic, but there are some guidelines on where best to put stuff.
+
+1. PlayerController. Anything to do with how input will be 
+2. Pawn: This is the manifestation of the player in the Unreal world. Things like setting up meshes, animation, etc. is best to do here
+3. 
+
+In simple cases the distinction between PlayerController/Pawn is not so deep so its fine to . Its still worth trying to keep behaviour seperate from the the manifestation logic.
 
 ### Collision
 
@@ -73,9 +95,57 @@ There seem to be a number of ways to load assets from the contents folder in C++
 4. Using LoadObject<T>()
 
 
+# Garbage collection
+
+## Key points
+
+- Only those classes that inherit from UObject will be considered for GC. All other classes need to do deal with their own memory management (e.g using smart pointers)
+- UObjects can be added to a rootset in orded to protect them from the GC.
+
+## Refs
+
+- https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/ProgrammingWithCPP/IntroductionToCPP/
+- https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Objects/Optimizations/#garbagecollection
+- https://www.ue4community.wiki/memory-management-6rlf3v4i
+
+
+# Working in C++
+
+## General tips
+- If you can't figure out how to do something in C++, make the blueprints version, then convert to native and see how what classes are usefull!
+
+
+## Using pointers
+
+- You cannot make a TSharedRef pointer to a UObject, doing so will result in an error
+```
+Severity	Code	Description	Project	File	Line	Suppression State
+Error	C2665	'URepo3d::operator new': none of the 2 overloads could convert all the argument types	repounreal	F:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Core\Public\Templates\SharedPointerInternals.h	135	
+```
+- TSharedRef pointers need a default constructor on the object they are pointing to 
+
+## Exposing C++ to blueprints
+
+https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Blueprints/TechnicalGuide/ExtendingBlueprints/
+ 
+### General tips
+- UCLASS(Blueprintable) is inhereted from parent classes so can be skipped if inheriting from blueprintable class
+
+## Working asynch in UE4
+
+https://conoscerelinux.org/wp-content/uploads/2019/11/Mischitelli-Slides-Nov2019.pdf
+
+### Does everything that is blueprints visible have to be a UCLASS()
+
+In order for 
+
 
 # Resources
 
+General resources to complement the standard unreal docs
+
+https://unrealcommunity.wiki/
 https://www.tomlooman.com
+
 
 
